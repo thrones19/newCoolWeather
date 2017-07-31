@@ -133,10 +133,25 @@ public class WeatherActivity extends AppCompatActivity {
     *根据天气id请求城市天气信息
      */
     public void inquireWeather(final  String weatherId) {
+        /*
+        我自己的key
+         */
         //String weatherUrl = "http://guolin.tech/api/weather?cityid=" +
           //      weatherId + "&key=2e7b9e3dbf0d4bd1a5472a0ef7406ce9 ";
-        String weatherUrl = "http://guolin.tech/api/weather?cityid=" +
-                weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9 ";
+        /*
+        郭霖的付费 key
+         */
+       // String weatherUrl = "http://guolin.tech/api/weather?cityid=" +
+            //    weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9 ";
+        /*
+        2017年7月31日
+        之前的key不能用了，更新成v5接口
+        付费：https://api.heweather.com/v5/weather?city=yourcity&key=yourkey
+        免费用户：https://free-api.heweather.com/v5/weather?city=yourcity&key=yourkey
+        下面用的郭霖的付费接口
+         */
+        String weatherUrl = "https://api.heweather.com/v5/weather?city=" +
+                    weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9 ";
 
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
