@@ -150,8 +150,13 @@ public class WeatherActivity extends AppCompatActivity {
         免费用户：https://free-api.heweather.com/v5/weather?city=yourcity&key=yourkey
         下面用的郭霖的付费接口
          */
-        String weatherUrl = "https://api.heweather.com/v5/weather?city=" +
-                    weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9 ";
+      //  String weatherUrl = "https://api.heweather.com/v5/weather?city=" +
+        //            weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9 ";
+        /*
+        郭霖的key不能用了   我重新申请了一个key=ed519ff11d4c44e29861cf8acb8803ec
+         */
+        String weatherUrl = "https://free-api.heweather.com/v5/weather?city=" +
+                            weatherId + "&key=ed519ff11d4c44e29861cf8acb8803ec ";
 
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override

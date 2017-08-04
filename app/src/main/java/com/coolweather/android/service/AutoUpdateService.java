@@ -57,8 +57,8 @@ public class AutoUpdateService extends Service {
 
             //String weatherUrl = "http://guolin.tech/api/weather?cityid=" +
                    // weatherId + "&key=2e7b9e3dbf0d4bd1a5472a0ef7406ce9 ";
-            String weatherUrl = "https://api.heweather.com/v5/weather?city=" +
-                    weatherId + "&key=bc0418b57b2d4918819d3974ac1285d9 ";
+            String weatherUrl = "https://free-api.heweather.com/v5/weather?city=" +
+                    weatherId + "&key=ed519ff11d4c44e29861cf8acb8803ec ";
 
             HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
                 @Override
