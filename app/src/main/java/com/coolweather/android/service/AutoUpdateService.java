@@ -88,6 +88,13 @@ public class AutoUpdateService extends Service {
     *更新必应每日一图
      */
     private void updateBingPic() {
+        final String bingPic = "https://api.dujin.org/bing/1366.php";
+        SharedPreferences.Editor editor = PreferenceManager.
+                getDefaultSharedPreferences(AutoUpdateService.this).edit();
+        editor.putString("bing_pic", bingPic);
+        editor.apply();
+    }
+        /**
         String requestBingPic = "http://guolin.tech/api/bing_pic";
         HttpUtil.sendOkHttpRequest(requestBingPic, new Callback() {
             @Override
@@ -106,4 +113,5 @@ public class AutoUpdateService extends Service {
             }
         });
     }
+         */
 }

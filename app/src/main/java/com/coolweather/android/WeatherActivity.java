@@ -279,7 +279,19 @@ public class WeatherActivity extends AppCompatActivity {
     *加载必应每日一图
      */
     private void loadBingPic() {
-        String requestBingPic = "http://guolin.tech/api/bing_pic";
+
+        final String bingPic = "https://api.dujin.org/bing/1366.php";
+        SharedPreferences.Editor editor = PreferenceManager.
+                getDefaultSharedPreferences(WeatherActivity.this).edit();
+        editor.putString("bing_pic",bingPic);
+        editor.apply();
+        runOnUiThread(new Runnable() {
+                          @Override
+                          public void run() {
+                              Glide.with(WeatherActivity.this).load(bingPic).into(bingPicImg);
+                          }
+                      });
+       /** String requestBingPic = "http://guolin.tech/api/bing_pic";
         HttpUtil.sendOkHttpRequest(requestBingPic, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -304,4 +316,7 @@ public class WeatherActivity extends AppCompatActivity {
             }
         });
     }
+        */
+    }
+
 }
