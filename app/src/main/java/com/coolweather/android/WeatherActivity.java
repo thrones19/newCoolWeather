@@ -156,7 +156,7 @@ public class WeatherActivity extends AppCompatActivity {
         郭霖的key不能用了   我重新申请了一个key=ed519ff11d4c44e29861cf8acb8803ec
          */
         String weatherUrl = "https://free-api.heweather.com/v5/weather?city=" +
-                            weatherId + "&key=ed519ff11d4c44e29861cf8acb8803ec ";
+                            weatherId + "&key=ed519ff11d4c44e29861cf8acb8803ec";
 
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
